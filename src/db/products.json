@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "title": "Campera",
+    "description": "Campera de cuero",
+    "code": "453",
+    "price": 15000,
+    "status": true,
+    "stock": 20,
+    "category": "Abrigo",
+    "thumbnails": ["url1", "url"]
+  },
+  {
+    "id": "2",
+    "title": "Campera",
+    "description": "Campera de cuero",
+    "code": "453",
+    "price": 15000,
+    "status": true,
+    "stock": 20,
+    "category": "Abrigo",
+    "thumbnails": ["url1", "url"]
+  },
+  {
+    "id": "3",
+    "title": "Campera",
+    "description": "Campera de cuero",
+    "code": "453",
+    "price": 15000,
+    "status": true,
+    "stock": 20,
+    "category": "Abrigo",
+    "thumbnails": ["url1", "url"]
+  }
+]
