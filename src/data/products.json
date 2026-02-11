@@ -1,18 +1,5 @@
 [
   {
-    "id": 1,
-    "title": "Remera Blanca",
-    "description": "Remera de algodón lisa",
-    "code": "REM-001",
-    "price": 3500,
-    "status": true,
-    "stock": 15,
-    "category": "Ropa",
-    "thumbnails": [
-      "img/remera1.jpg"
-    ]
-  },
-  {
     "id": 2,
     "title": "Zapatilla Negra",
     "description": "Zapatilla deportiva",
@@ -23,6 +10,19 @@
     "category": "Calzado",
     "thumbnails": [
       "img/zapa1.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Campera Azul",
+    "description": "Campera deportiva",
+    "code": "CAMP-001",
+    "price": 18000,
+    "status": true,
+    "stock": 8,
+    "category": "Ropa",
+    "thumbnails": [
+      "img/campera.jpg"
     ]
   }
 ]

@@ -20,8 +20,14 @@ router.get("/:pid", async (req, res) => {
 // POST
 router.post("/", async (req, res) => {
   const newProduct = await manager.addProduct(req.body);
+
+  const products = await manager.getProducts();
+  const io = req.app.get("io");
+  io.emit("updateProducts", products);
+
   res.status(201).json(newProduct);
 });
+
 
 // PUT
 router.put("/:pid", async (req, res) => {
@@ -33,7 +39,13 @@ router.put("/:pid", async (req, res) => {
 // DELETE
 router.delete("/:pid", async (req, res) => {
   await manager.deleteProduct(req.params.pid);
+
+  const products = await manager.getProducts();
+  const io = req.app.get("io");
+  io.emit("updateProducts", products);
+
   res.json({ message: "Producto eliminado" });
 });
+
 
 export default router;
