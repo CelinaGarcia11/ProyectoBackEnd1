@@ -1,6 +1,11 @@
+import sessionsRouter from "./routes/sessions.router.js";
+import mongoose from "mongoose";
 import express from "express";
 import productsRouter from "./routes/products.router.js";
 import cartsRouter from "./routes/carts.router.js";
+
+import passport from "passport";
+import { initializePassport } from "./config/passport.config.js";
 
 import { engine } from "express-handlebars";
 import path from "path";
@@ -15,7 +20,16 @@ import ProductManager from "./managers/ProductManager.js";
 
 
 const app = express();
+
+initializePassport();
+app.use(passport.initialize());
+
 const PORT = 8080;
+
+
+mongoose.connect("mongodb+srv://celigarciacba:coder1234@cluster0.ekxfyu5.mongodb.net/ecommerce?retryWrites=true&w=majority")
+  .then(() => console.log("🟢 Conectado a MongoDB"))
+  .catch(err => console.log("🔴 Error:", err));
 
 // Configuración para __dirname en ES Modules
 const __filename = fileURLToPath(import.meta.url);
@@ -33,8 +47,11 @@ app.use(express.json());
 // Rutas
 app.use("/api/products", productsRouter);
 app.use("/api/carts", cartsRouter);
+app.use("/api/sessions", sessionsRouter);
 
 app.use("/", viewsRouter);
+
+
 
 
 // Servidor
